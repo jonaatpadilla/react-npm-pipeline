@@ -7,7 +7,7 @@ pipeline {
 
   }
   stages {
-    stage('primer') {
+    stage('Build') {
       steps {
         echo 'hola mundo'
         sh '/usr/bin/npm install'

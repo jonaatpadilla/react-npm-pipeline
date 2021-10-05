@@ -1,19 +1,16 @@
 pipeline {
   agent {
-    label 'docker'
+    any {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
+    }
+
   }
   stages {
-    stage('Docker node test') {
-      agent {
-        docker {
-          label 'docker'
-          image 'node:7-alpine'
-          args '-p 3000:3000'
-        }
-
-      }
+    stage('primer') {
       steps {
-        sh 'npm install'
+        echo 'hola mundo'
+        sh '/usr/bin/npm install'
       }
     }
 
